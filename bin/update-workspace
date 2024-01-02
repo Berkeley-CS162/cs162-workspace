@@ -1,0 +1,34 @@
+#!/bin/bash
+
+set -e
+
+echo "Updating workspace..."
+
+updated_files=$(sudo rsync -raihWt --remove-source-files --dry-run --checksum /workspace/ /home/workspace | grep --color=never "^>fc" | cut -d' ' -f2- | LC_ALL=C sort)
+
+function update {
+  pushd /home/workspace
+    git add -A && git commit -m "Backup Date $(date)" 2>&1 > /dev/null
+  popd
+  sudo rsync -rahWt --remove-source-files --exclude './code' --exclude '.version' --info=progress2 --info=name0 /workspace/ /home/workspace
+  sudo rsync -rahWt --remove-source-files --info=progress2 --info=name0 /workspace/.version /home/workspace
+}
+
+if [ ! -f "/workspace/.version" ]; then
+  echo "Workspace looks updated. Exiting update."
+  exit
+fi
+
+if [[ $updated_files ]]; then
+  echo "Updated files will override existing ones:"
+  echo "$updated_files" | xargs -i echo "/workspace/{} -> /home/workspace/{}"
+  echo "$updated_files" | xargs -i diff --color=always -u "/home/workspace/{}" "/workspace/{}" | (printf "The following files will be overwritten. Please review the changes and hit Q to exit browsing the changes.\n\n" && cat) | less -R
+  read -p 'Are you sure you want to override these files? Type "YES" to confirm: ' -r choice
+  case "$choice" in
+    YES ) update;;
+    * ) echo "Updated cancelled. Please review to-be updated files and re-run update-workspace.";;
+  esac
+else
+  echo "Updated files will not need to override existing ones"
+  update
+fi

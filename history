@@ -1,0 +1,72 @@
+    1  cd workspace/
+    2  ls
+    3  cd code
+    4  ls
+    5  cd ../
+    6  ls -lah
+    7  cd ../
+    8  ls -lah
+    9  rsync
+   10  sudo apt-get install rsync
+   11  sudo apt-get install rsync
+   12  sudo apt-get install git
+   13  sudo apt-get install rsync
+   14  sudo apt-get install rsync
+   15  sudo apt-get update
+   16  sudo apt-get install rsync
+   17  rsync -zrahvWt --remove-source-files /workspace/ /home/workspace
+   18  sudo rsync -rahvWt --remove-source-files /workspace/ /home/workspace
+   19  ls
+   20  cd
+   21  cd home
+   22  cd /home
+   23  ls
+   24  ls -lah
+   25  cd workspace/
+   26  ls
+   27  sudo rsync -rahWt --remove-source-files /workspace/ /home/workspace
+   28  cd /workspace/
+   29  ls
+   30  ls -lah
+   31  cd .cargo
+   32  ls
+   33  ls -lah
+   34  cd ../../
+   35  cd
+   36  sudo rsync -rahWt --remove-source-files /workspace/ /home/workspace
+   37  sudo rsync -rahWt --remove-source-files /workspace/ /home/workspace
+   38  sudo rsync -rahWt --remove-source-files /workspace/ /home/workspace
+   39  sudo rsync -rahWt --remove-source-files /workspace/ /home/workspace
+   40  sudo rsync -rahWt --remove-source-files /workspace/ /home/workspace
+   41  sudo rsync -rahWt --remove-source-files /workspace/ /home/workspace
+   42  sudo rsync -rahWt --remove-source-files /workspace/ /home/workspace
+   43  sudo rsync -rahWt --remove-source-files /workspace/ /home/workspace
+   44  cd /workspace
+   45  vi .bashrc
+   46  sudo rsync -rahWt --remove-source-files /workspace/ /home/workspace
+   47  cd
+   48  cat .bashrc 
+   49  cd /workspace
+   50  vi .bashrc
+   51  sudo rsync -rahWt --remove-source-files --dry-run /workspace/ /home/workspace
+   52  cat ~/.bashrc
+   53  sudo rsync -ravhWt --remove-source-files --dry-run /workspace/ /home/workspace
+   54  diff .bashrc ~/.bashrc
+   55  diff --color .bashrc ~/.bashrc
+   56  diff --color -u .bashrc ~/.bashrc
+   57  sudo rsync -raivhWt --remove-source-files --dry-run /workspace/ /home/workspace
+   58  sudo rsync -raihWt --remove-source-files --dry-run /workspace/ /home/workspace
+   59  sudo rsync -rahWt --out-format='%n' --remove-source-files --dry-run /workspace/ /home/workspace
+   60  sudo rsync -rahWt --out-format='%n' --remove-source-files --dry-run /workspace/ /home/workspace
+   61  read -p "Are you sure? " -n 1 -r
+   62  read -p "It looks like this workspace received an update, but you have some changes to files that will be overwritten. Are you sure you want to override these files?" -n 1 -r
+   63  read -p "It looks like this workspace received an update, but you have some changes to files that will be overwritten. Are you sure you want to override these files?" -n 1 -r
+   64  sudo rsync -rahWt --out-format='%n' --remove-source-files --dry-run /workspace/ /home/workspace
+   65  man rsyncd.conf
+   66  history
+
+
+   sudo rsync -raihWt --remove-source-files --dry-run --checksum /workspace/ /home/workspace
+   sudo rsync -raihWt --remove-source-files --dry-run --checksum /workspace/ /home/workspace | grep --color=never "^>fc" | cut -d' ' -f2- | LC_ALL=C sort | xargs -i echo {}
+
+   sudo rsync -raihWt --remove-source-files --dry-run --checksum /workspace/ /home/workspace | grep --color=never "^>fc" | cut -d' ' -f2- | LC_ALL=C sort | xargs -i diff --color=always -u "/home/workspace/{}" "/workspace/{}" | (echo "The following files will be overwritten. Please review the changes and hit Q to exit browsing the changes.\n\n" && cat) | less -R
