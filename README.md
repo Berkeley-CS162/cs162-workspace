@@ -23,7 +23,7 @@ _Note: Docker commands will generally have to be run with sudo access, so for th
   
 2. **Navigate to the Repository**
    ```bash
-   cd workspace-image
+   cd cs162-workspace
    ```
 
 3. **Run Docker Compose for the first time**
