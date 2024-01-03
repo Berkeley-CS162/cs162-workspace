@@ -1,8 +1,8 @@
-# 🫘 CS162 Workspace Image 🫘
+# 🫘 CS162 Workspace 🫘
 
 ## Introduction
 
-Welcome to the CS162 Workspace Image, a Docker-based environment for CS 162! This image is designed to provide a standardized development environment for students regardless of host architecture or OS, without the hassle of VPN'ing into an instructional machine.
+Welcome to the CS162 Workspace, a Docker-based environment for CS 162! This image is designed to provide a standardized development environment for students regardless of host architecture or OS, without the hassle of VPN'ing into an instructional machine.
 
 ## Prerequisites
 Docker is a cross-platform tool for managing containers. You can use Docker to download and run the Workspace we have prepared for this course. The Workspace for the course may undergo significant changes every term; do not use one from a previous semester.
