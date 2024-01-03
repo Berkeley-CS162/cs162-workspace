@@ -11,7 +11,7 @@ if [ -f "/home/workspace/.version" ]; then
 		echo "No updates detected!"
 	else
 		echo "Update detected!"
-		# update-workspace
+		update-workspace
 		# File do not match
 		# Get list of existing files that don't match
 		# Confirmation for override

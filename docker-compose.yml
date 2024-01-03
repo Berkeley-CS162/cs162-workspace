@@ -6,4 +6,4 @@ services:
     volumes:
       - ./.workspace:/home/workspace
     ports:
-      - "16225:22"
+      - "16222:22"
