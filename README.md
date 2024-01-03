@@ -1,4 +1,4 @@
-# CS162 Workspace Image
+# 🫘 CS162 Workspace Image 🫘
 
 ## Introduction
 
