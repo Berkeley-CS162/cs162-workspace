@@ -4,7 +4,7 @@
 export PINTOS_PORT=${PINTOS_PORT:-1234}
 
 # Path to GDB macros file.  Customize for your site.
-GDBMACROS=/home/vagrant/.bin/gdb-macros
+GDBMACROS=/home/workspace/.bin/gdb-macros
 
 # Choose correct GDB.
 if command -v i386-elf-gdb >/dev/null 2>&1; then
