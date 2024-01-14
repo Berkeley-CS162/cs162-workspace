@@ -50,6 +50,8 @@ RUN --mount=target=/var/lib/apt/lists,type=cache,sharing=locked \
   gcc-i686-linux-gnu \
   qemu-user \
   rsync \
+  libglib2.0-dev \
+  rpcbind \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/*
 
