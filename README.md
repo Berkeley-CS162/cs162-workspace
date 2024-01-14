@@ -37,20 +37,32 @@ _Note: Docker commands will generally have to be run with sudo access, so for th
    
    Use <kbd>Ctrl</kbd> + <kbd>C</kbd> to stop the command.
 
-5. **Starting the container in the background**
+4. **Starting the container in the background**
    ```bash
    docker-compose up -d
    ```
    This will simply start the container in the background and keep it running. With Docker Desktop, you can also manage this through the GUI.
 
-8. **SSH into the Container**
+5. **SSH into the Container**
    ```bash
    ssh workspace@127.0.0.1 -p 16222
    ```
 
    Use the password `workspace` the first time you SSH into the container.
 
-9. **Stop the container**
+6. **Add Github SSH keys**
+   ```bash
+   ssh-keygen -t ed25519 -C "your_email@example.com"
+   ```
+   will generate an SSH key. Make sure to replace `your_email@example.com` with your own email.
+   
+   Add the output of
+   ```bash
+   cat ~/.ssh/id_ed25519.pub
+   ```
+   to your Github account by following the instructions on [this page](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account#adding-a-new-ssh-key-to-your-account).
+  
+7. **Stop the container**
    ```bash
    docker-compose down
    ```
