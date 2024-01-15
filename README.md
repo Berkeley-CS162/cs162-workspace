@@ -97,6 +97,20 @@ You can now enjoy a passwordless SSH experience for your CS162 workspace:
 
 Happy coding!
 
+## Updating the image
+
+You may need to update the image if changes are pushed. You could completely reset your workspace by deleting the .workspace directory. However, we provide a mechanism to safely update by tracking changes with git.
+
+1. To be extra safe, **push anything you want to keep to Github first**.
+
+2. Pull the latest image from Docker hub with `docker image pull cs162/pintospace`.
+
+3. Stop and remove the old container. You can do this through the Docker desktop GUI or the command line via `docker stop CONTAINER_ID && docker rm CONTAINER_ID`. You can find your `CONTAINER_ID` through `docker ps -a`. 
+
+4. Run `docker-compose run -i cs162` and follow the instructions to update. You can exit out of the shell with `exit` once it's done.
+   
+5. You're done updating! You can go back to the usual way of starting the container.
+
 ## Building From Source (OPTIONAL and not recommended)
 
 **Local build:**
