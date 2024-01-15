@@ -61,6 +61,8 @@ RUN useradd --create-home --home-dir /home/workspace --user-group workspace && e
 WORKDIR /home/workspace
 COPY ./home/. ./
 
+RUN git config --global init.defaultBranch main
+
 COPY ./install_scripts/. /install_scripts
 WORKDIR /install_scripts
 RUN ./create_group0.sh && ./create_student0.sh && ./install_bochs.sh && ./install_rust.sh && ./squish/install.sh
@@ -68,8 +70,6 @@ RUN ./create_group0.sh && ./create_student0.sh && ./install_bochs.sh && ./instal
 WORKDIR /
 COPY entrypoint.sh .
 COPY ./bin/. ./bin
-
-RUN git config --global init.defaultBranch main
 
 RUN find /home/workspace/. -not -type d -not -path "./code/*" -not -name ".version" -print0 | LC_ALL=C sort -z | xargs -0 sha256sum | sha256sum > /home/workspace/.version
 
