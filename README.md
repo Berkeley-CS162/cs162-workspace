@@ -87,7 +87,8 @@ You can now enjoy a passwordless SSH experience for your CS162 workspace:
 
 Happy coding!
 
-## Updating the image
+## (OPTIONAL) Updating the image
+**You only need to do this if staff push changes to the image. We will let you know if/when this happens.**
 
 You may need to update the image if changes are pushed. You could completely reset your workspace by deleting the .workspace directory. However, we provide a mechanism to safely update by tracking changes with git.
 
