@@ -51,6 +51,7 @@ _Note: Docker commands will generally have to be run with sudo access, so for th
    Use the password `workspace` the first time you SSH into the container.
   
 6. **Stop the container**
+   
    _Within your host machine's shell (not the Workspace shell you ssh'd into)_:
    ```bash
    docker-compose down
