@@ -134,3 +134,9 @@ fi
 . ~/.cs162.bashrc
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+# Project 0
+alias pintos-debug='FORCE_SIMULATOR=--bochs PINTOS_DEBUG=1 pintos-test'
+if locale -a | grep -q 'C.utf8'; then
+    export LANG=C.utf8
+fi
